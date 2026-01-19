@@ -1,0 +1,36 @@
+name = "feedback-aggregator"
+main = "src/index.ts"
+compatibility_date = "2024-01-01"
+node_compat = true
+
+# D1 Database binding
+[[d1_databases]]
+binding = "data"
+database_name = "fakedata"
+database_id = "0cd8f118-5ecd-4113-9e4d-751de1a463d1"
+
+# Workers AI binding
+[ai]
+binding = "AI"
+
+# Queue binding for processing feedback
+[[queues.producers]]
+queue = "feedback-queue"
+binding = "feedback-queue"
+
+[[queues.consumers]]
+queue = "feedback-queue"
+max_batch_size = 10
+max_batch_timeout = 30
+max_retries = 3
+dead_letter_queue = "feedback-queue-dlq"
+
+# KV binding for storing processed summaries
+[[kv_namespaces]]
+binding = "SUMMARIES_KV"
+id = "3da825b87c9c4342bf1859accb4fe0f9"
+preview_id = "your-preview-kv-id" # Optional: create preview namespace for local dev
+
+# Environment variables
+[vars]
+ENVIRONMENT = "production"

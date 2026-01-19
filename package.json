@@ -1,0 +1,24 @@
+{
+  "name": "feedback-aggregator",
+  "version": "1.0.0",
+  "description": "Cloudflare PM Intern Assignment - Feedback Aggregation & Analysis Tool",
+  "main": "src/index.ts",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "db:create": "wrangler d1 create feedback-db",
+    "db:migrate": "wrangler d1 execute feedback-db --file=./schema.sql",
+    "db:local": "wrangler d1 execute feedback-db --local --file=./schema.sql"
+  },
+  "keywords": ["cloudflare", "workers", "feedback", "ai"],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20241218.0",
+    "typescript": "^5.3.3",
+    "wrangler": "^3.78.0"
+  },
+  "dependencies": {
+    "zod": "^3.22.4"
+  }
+}
