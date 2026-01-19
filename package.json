@@ -4,6 +4,7 @@
   "description": "Cloudflare PM Intern Assignment - Feedback Aggregation & Analysis Tool",
   "main": "src/index.ts",
   "scripts": {
+    "build": "echo 'Cloudflare Workers bundles automatically via wrangler'",
     "dev": "wrangler dev",
     "deploy": "wrangler deploy",
     "db:create": "wrangler d1 create feedback-db",

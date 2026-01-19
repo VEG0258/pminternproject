@@ -404,7 +404,7 @@ export const dashboardHTML = `
                     try {
                         const response = await fetch('/api/stream-feedback?count=10');
                         const result = await response.json();
-                        alert(`Queued ${result.entries.length} feedback entries! Processing...`);
+                        alert('Queued ' + result.entries.length + ' feedback entries! Processing...');
                         setTimeout(() => this.loadStats(), 2000);
                     } catch (error) {
                         console.error('Error streaming feedback:', error);
