@@ -5,9 +5,9 @@ node_compat = true
 
 # D1 Database binding
 [[d1_databases]]
-binding = "DB"
-database_name = "feedback-db"
-database_id = "4e8daa45-153d-4a44-9c03-08d4cda93609"
+binding = "data"
+database_name = "fakedata"
+database_id = "0cd8f118-5ecd-4113-9e4d-751de1a463d1"
 
 # Workers AI binding
 [ai]
@@ -16,7 +16,7 @@ binding = "AI"
 # Queue binding for processing feedback
 [[queues.producers]]
 queue = "feedback-queue"
-binding = "FEEDBACK_QUEUE"
+binding = "feedback-queue"
 
 [[queues.consumers]]
 queue = "feedback-queue"
@@ -27,9 +27,9 @@ dead_letter_queue = "feedback-queue-dlq"
 
 # KV binding for storing processed summaries
 [[kv_namespaces]]
-binding = "SUMMARIES"
-id = "your-kv-namespace-id" # Will be created via CLI
-preview_id = "your-preview-kv-id"
+binding = "SUMMARIES_KV"
+id = "3da825b87c9c4342bf1859accb4fe0f9"
+preview_id = "your-preview-kv-id" # Optional: create preview namespace for local dev
 
 # Environment variables
 [vars]
